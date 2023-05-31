@@ -20,7 +20,6 @@ export class AppContextProvider extends React.Component{
         try{
             const response = await fetch(url);
             const data = await response.json();
-            console.log(data);
             if(data.Response === "True"){
                 this.setState((prevState)=>{
                     return {movies: data.Search, 
@@ -29,7 +28,6 @@ export class AppContextProvider extends React.Component{
                 })
             }
             else{
-                console.log(data);
                 this.setState({error:{show: true, msg: data.Error}})
             }
             this.setState({loading: false});

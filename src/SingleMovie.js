@@ -8,7 +8,6 @@ class SingleMovie extends React.Component{
     async fetchMovies(url){
         const response = await fetch(url);
         const data = await response.json();
-        console.log(data);
         if(data.Response === "True"){
             this.setState({loading: false, movie: data})
         }
